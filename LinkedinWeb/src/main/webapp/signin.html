@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SignIn</title>
+<link rel="stylesheet" href="./css/index.css" />
+<script src="./js/profileLogin.js" defer></script>
+</head>
+<body>
+	<main class="page">
+		<div class="logo">
+			<div class="message">
+				<h1>Linkedin</h1>
+				<br>
+				<p>Don't have an account..?</p>
+				<a href="index.html">Sign Up</a>
+			</div>
+		</div>
+		<div class="right-col">
+			<div class="center">
+
+				<form name="myform" method="post" action="Signin" onsubmit="return validateemail();">
+					<p>Email :</p>
+					<input type="email" name="email" id="signin-Email" onfocusout="setUserid()" />
+
+					<p>Password:</p>
+					<input type="password" name="password" />
+
+					<div class="button">
+						<button type="submit">Submit</button>
+						<button type="reset">Reset</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+
+	<script>  
+function validateemail()  
+{  
+var x=document.myform.email.value;  
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+  return false;  
+  }  
+}  
+</script>
+</body>
+</html>
